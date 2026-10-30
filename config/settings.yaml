@@ -1,0 +1,4 @@
+database_path: "data/datapulse.db"
+landing_dir: "data/landing"
+log_dir: "logs"
+log_level: "INFO"
