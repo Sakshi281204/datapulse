@@ -1,0 +1,42 @@
+# Times are 'HH:MM' strings in the pipeline's single timezone.
+# They MUST be quoted: unquoted times such as 10:30 can be read by YAML as a number.
+datasets:
+  - dataset_id: customers
+    description: "Customer master data (synthetic)"
+    frequency: DAILY
+    expected_arrival_time: "06:00"
+    sla_deadline_time: "07:00"
+    freshness_threshold_hours: 26
+    file_pattern: "customers_{batch_date}.csv"
+    target_table: customers
+    business_key: customer_id
+
+  - dataset_id: products
+    description: "Product catalogue (synthetic)"
+    frequency: DAILY
+    expected_arrival_time: "06:30"
+    sla_deadline_time: "07:30"
+    freshness_threshold_hours: 48
+    file_pattern: "products_{batch_date}.csv"
+    target_table: products
+    business_key: product_id
+
+  - dataset_id: orders
+    description: "Customer orders (synthetic)"
+    frequency: DAILY
+    expected_arrival_time: "07:00"
+    sla_deadline_time: "08:00"
+    freshness_threshold_hours: 26
+    file_pattern: "orders_{batch_date}.csv"
+    target_table: orders
+    business_key: order_id
+
+  - dataset_id: payments
+    description: "Order payments (synthetic)"
+    frequency: DAILY
+    expected_arrival_time: "07:30"
+    sla_deadline_time: "08:30"
+    freshness_threshold_hours: 26
+    file_pattern: "payments_{batch_date}.csv"
+    target_table: payments
+    business_key: payment_id
