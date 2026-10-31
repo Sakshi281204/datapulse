@@ -65,3 +65,4 @@ memory, first write wins).
 
 The verbatim export covers my development prompts. Later follow-up prompts
 (debugging, test fixes, final review) may be summarised rather than listed.
+

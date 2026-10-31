@@ -652,6 +652,14 @@ Some implementation choices were made to keep the project reproducible and trace
 
 
 
+### Naming Conventions
+
+- Tables and columns use `snake_case` (for example `load_events`, `source_file`, `run_id`).
+- Dataset IDs are deterministic and stable (for example `dataset_customers`).
+- Every pipeline execution gets a unique `run_id`; load attempts keep their own `load_event_id` and attempt number, and are never overwritten.
+- `run_id` and `source_file` are stored on load events and target rows for traceability.
+- SLA timestamps must be timezone-aware and are normalized to UTC.
+
 ## 14. Additional Documentation
 
 Detailed project documentation is available in the `docs/` directory:

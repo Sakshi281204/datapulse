@@ -1,4 +1,4 @@
-﻿# DataPulse — Data Reconciliation
+# DataPulse — Data Reconciliation
 
 ## 1. Validation Accounting
 

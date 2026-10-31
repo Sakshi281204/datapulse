@@ -1,4 +1,4 @@
-﻿# DataPulse Performance and Benchmark Evidence
+# DataPulse Performance and Benchmark Evidence
 
 ## 1. Purpose
 
@@ -144,4 +144,6 @@ Hardware specifications were not recorded. Execution times are
 environment-dependent and should not be treated as guaranteed
 production performance.
 
+## Implemented Optimization
 
+Target publishing uses batched `executemany` inserts with `ON CONFLICT DO NOTHING`, and the pipeline commits once per run, instead of one insert and commit per row. A row-by-row comparison was not benchmarked, so no speedup figure is claimed.

@@ -1,4 +1,4 @@
-﻿# DataPulse Data Dictionary
+# DataPulse Data Dictionary
 
 ## 1. Purpose
 

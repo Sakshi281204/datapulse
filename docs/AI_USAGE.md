@@ -1,4 +1,4 @@
-﻿# AI Usage Disclosure
+# AI Usage Disclosure
 
 ## 1. Purpose
 
