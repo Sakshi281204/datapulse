@@ -43,8 +43,7 @@
 ## 4. What I personally reviewed, changed or validated
 
 - Ran the full test suite (118 tests passing at the time of this note).
-- Reviewed Git diffs before committing, and caught and corrected an encoding
-  problem in the README before it was committed.
+- Reviewed Git diffs before committing, and caught an encoding problem in the README diff before committing and fixed it with AI assistance.
 - Added the unexpected-columns schema check and tests, including a
   pipeline-level test that confirms a FAILED run with the error recorded.
 - Checked that products and payments are generated and registered only, and

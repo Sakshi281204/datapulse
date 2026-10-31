@@ -24,3 +24,9 @@ Per run: received = inserted + skipped + rejected.
 - pipeline_runs rows (history kept): 3
 - foreign key violations: 0
 - sqlite integrity_check: ok
+
+## Aggregate reconciliation
+
+- total order amount, source rows that were published: 149216.0
+- total order amount, orders_target: 149216.0
+- result: OK
