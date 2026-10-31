@@ -582,6 +582,28 @@ The dashboard reads from the existing Phase 2 database. Opening or refreshing it
 
 
 
+### Dashboard Screenshots
+
+The dashboard reads from the SQLite database. These screenshots were taken after running the sample pipeline and SLA checks.
+
+![Dashboard screenshot 1](docs/screenshots/dashboard_1.png)
+
+![Dashboard screenshot 2](docs/screenshots/dashboard_2.png)
+
+![Dashboard screenshot 3](docs/screenshots/dashboard_3.png)
+
+![Dashboard screenshot 4](docs/screenshots/dashboard_4.png)
+
+![Dashboard screenshot 5](docs/screenshots/dashboard_5.png)
+
+![Dashboard screenshot 6](docs/screenshots/dashboard_6.png)
+
+![Dashboard screenshot 7](docs/screenshots/dashboard_7.png)
+
+![Dashboard screenshot 8](docs/screenshots/dashboard_8.png)
+
+![Dashboard screenshot 9](docs/screenshots/dashboard_9.png)
+
 ## 11. Run Automated Tests
 
 
