@@ -1,4 +1,4 @@
-DataPulse — Automated Data Pipeline Monitoring and SLA Management
+# DataPulse — Automated Data Pipeline Monitoring and SLA Management
 
 
 
@@ -160,7 +160,7 @@ The main operational database is:
 
 
 
-`data/datapulse\_phase2.db`
+`data/datapulse_phase2.db`
 
 
 
@@ -174,15 +174,15 @@ It contains seven tables:
 
 | datasets | Dataset configuration and SLA settings |
 
-| pipeline\_runs | Pipeline execution history |
+| pipeline_runs | Pipeline execution history |
 
-| load\_events | File arrival, processing, and retry history |
+| load_events | File arrival, processing, and retry history |
 
-| customer\_target | Published customer records |
+| customer_target | Published customer records |
 
-| orders\_target | Published order records |
+| orders_target | Published order records |
 
-| quarantine\_records | Rejected records and reasons |
+| quarantine_records | Rejected records and reasons |
 
 | alerts | SLA and pipeline monitoring alerts |
 
@@ -232,15 +232,15 @@ datapulse/
 
 ├── scripts/
 
-│   └── run\_sla\_checks.py
+│   └── run_sla_checks.py
 
 │
 
 ├── sql/
 
-│   ├── phase2\_schema.sql
+│   ├── phase2_schema.sql
 
-│   ├── phase2\_verify.sql
+│   ├── phase2_verify.sql
 
 │   └── schema.sql
 
@@ -256,7 +256,7 @@ datapulse/
 
 │       ├── ingestion.py
 
-│       ├── load\_events.py
+│       ├── load_events.py
 
 │       ├── pipeline.py
 
@@ -264,7 +264,7 @@ datapulse/
 
 │       ├── quarantine.py
 
-│       ├── sla\_monitor.py
+│       ├── sla_monitor.py
 
 │       ├── transformation.py
 
@@ -430,7 +430,7 @@ python -m datapulse.generator --count 100 --seed 42 --clean
 
 
 
-\*\*Note:\*\* The generator writes files to its output directories. Review existing files before running it again, particularly if you have modified sample datasets.
+**Note:** The generator writes files to its output directories. Review existing files before running it again, particularly if you have modified sample datasets.
 
 
 
@@ -448,7 +448,7 @@ The end-to-end pipeline currently supports the customers and orders datasets.
 
 ```powershell
 
-python -c "from datapulse.pipeline import run\_dataset\_pipeline; print(run\_dataset\_pipeline('customers', 'data/sample/customers.csv'))"
+python -c "from datapulse.pipeline import run_dataset_pipeline; print(run_dataset_pipeline('customers', 'data/sample/customers.csv'))"
 
 ```
 
@@ -464,7 +464,7 @@ Run customers first so the customer records are available for order-reference va
 
 ```powershell
 
-python -c "from datapulse.pipeline import run\_dataset\_pipeline; print(run\_dataset\_pipeline('orders', 'data/sample/orders.csv'))"
+python -c "from datapulse.pipeline import run_dataset_pipeline; print(run_dataset_pipeline('orders', 'data/sample/orders.csv'))"
 
 ```
 
@@ -510,7 +510,7 @@ SLA checks are executed manually:
 
 ```powershell
 
-python scripts/run\_sla\_checks.py
+python scripts/run_sla_checks.py
 
 ```
 
@@ -536,7 +536,7 @@ Alerts are stored in the SQLite database with severity, status, timestamps, and 
 
 
 
-\*\*Important:\*\* Running the SLA script can update load-event and alert records. It is not a read-only operation.
+**Important:** Running the SLA script can update load-event and alert records. It is not a read-only operation.
 
 
 
@@ -602,7 +602,7 @@ The test suite covers database initialization, synthetic data generation, ingest
 
 
 
-\*\*Latest verified result:\*\* 115 tests passed.
+**Latest verified result:** 115 tests passed.
 
 
 
@@ -656,7 +656,7 @@ Some implementation choices were made to keep the project reproducible and trace
 
 
 
-\*\*Sakshi Gurule\*\*
+**Sakshi Gurule**
 
 
 
