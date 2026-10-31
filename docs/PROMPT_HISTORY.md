@@ -8,8 +8,7 @@
   alerts, pipeline orchestration, testing, dashboard, performance, final
   documentation).
 - I used the roadmap prompts as reference and wrote my own prompts in my own
-  words. My prompts are reproduced verbatim in
-  `docs/prompt_exports/chatgpt_prompts.md`.
+  words. My prompts are reproduced verbatim in section 7 of this file.
 - The table below is a **reconstruction of what I asked in each phase**, not a
   verbatim log.
 - During final submission preparation I also asked an AI assistant to review
