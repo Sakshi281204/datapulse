@@ -1,6 +1,7 @@
 """Run the pipeline on sample data in a temp DB and write a reconciliation report."""
 import tempfile
 from contextlib import closing
+from contextlib import closing
 from pathlib import Path
 
 from datapulse.database import get_connection, initialize_database, seed_datasets
