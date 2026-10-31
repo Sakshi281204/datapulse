@@ -1,9 +1,40 @@
+﻿# Python virtual environments
 .venv/
+venv/
+
+# Python cache
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Testing and coverage
 .pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Build and package files
 *.egg-info/
+build/
+dist/
+
+# Local databases
 *.db
+*.sqlite
+*.sqlite3
+
+# Logs
 logs/*.log
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Streamlit secrets
+.streamlit/secrets.toml
+.streamlit/credentials.toml
+
+# Local landing data
 data/landing/*
 !data/landing/.gitkeep
