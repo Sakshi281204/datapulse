@@ -24,6 +24,27 @@ ORDER_REQUIRED_COLUMNS = {
     "status",
 }
 
+CUSTOMER_ALLOWED_COLUMNS = {
+    "customer_id",
+    "first_name",
+    "last_name",
+    "email",
+    "phone",
+    "city",
+    "created_at",
+}
+
+ORDER_ALLOWED_COLUMNS = {
+    "order_id",
+    "customer_id",
+    "product_id",
+    "order_date",
+    "quantity",
+    "unit_price",
+    "total_amount",
+    "status",
+}
+
 VALID_ORDER_STATUSES = {
     "PLACED",
     "SHIPPED",
@@ -54,8 +75,10 @@ def _check_columns(
     dataframe: pd.DataFrame,
     required_columns: set[str],
     dataset_name: str,
+    allowed_columns: set[str],
 ) -> None:
-    """Raise an informative error if required source columns are missing."""
+    """Check required columns and reject unexpected schema changes."""
+
     missing = sorted(required_columns - set(dataframe.columns))
 
     if missing:
@@ -64,6 +87,13 @@ def _check_columns(
             f"{', '.join(missing)}"
         )
 
+    unexpected = sorted(set(dataframe.columns) - allowed_columns)
+
+    if unexpected:
+        raise ValueError(
+            f"{dataset_name} contains unexpected columns: "
+            f"{', '.join(unexpected)}"
+        )
 
 def _is_blank(series: pd.Series) -> pd.Series:
     """Identify null, empty and whitespace-only values."""
@@ -115,6 +145,7 @@ def validate_customers(dataframe: pd.DataFrame) -> ValidationResult:
         dataframe,
         CUSTOMER_REQUIRED_COLUMNS,
         "customers",
+        CUSTOMER_ALLOWED_COLUMNS,
     )
 
     errors: list[list[str]] = [[] for _ in range(len(dataframe))]
@@ -171,6 +202,7 @@ def validate_orders(
         dataframe,
         ORDER_REQUIRED_COLUMNS,
         "orders",
+        ORDER_ALLOWED_COLUMNS,
     )
 
     errors: list[list[str]] = [[] for _ in range(len(dataframe))]

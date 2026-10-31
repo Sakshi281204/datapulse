@@ -598,3 +598,35 @@ def test_source_rows_reconcile_and_rejects_are_traceable(
         assert target["source_file"] == run["source_file"]
 
     assert broken_links == []
+
+
+def test_pipeline_fails_on_unexpected_schema_change(database_path, tmp_path):
+    """An unexpected source column should fail the run and record the error."""
+    csv_file = tmp_path / "customers_extra_column.csv"
+    csv_file.write_text(
+        "customer_id,first_name,last_name,email,city,customer_age\n"
+        "C001,Alice,Sharma,alice@example.com,Pune,30\n",
+        encoding="utf-8",
+    )
+
+    result = run_dataset_pipeline(
+        dataset_name="customers",
+        source_path=csv_file,
+        database_path=database_path,
+    )
+
+    assert result["status"] == "FAILED"
+    assert "unexpected columns: customer_age" in result["error_message"]
+
+    with get_connection(database_path) as connection:
+        customer_count = connection.execute(
+            "SELECT COUNT(*) FROM customer_target"
+        ).fetchone()[0]
+        run = connection.execute(
+            "SELECT status, error_message FROM pipeline_runs WHERE run_id = ?",
+            (result["run_id"],),
+        ).fetchone()
+
+    assert customer_count == 0
+    assert run[0] == "FAILED"
+    assert "customer_age" in run[1]

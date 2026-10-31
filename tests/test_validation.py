@@ -227,3 +227,24 @@ def test_rejected_records_include_csv_row_numbers(customers):
     result = validate_customers(customers)
 
     assert result.rejected_records.iloc[0]["row_number"] == 3
+def test_unexpected_customer_column_is_rejected(customers):
+    customers["customer_age"] = [25, 30]
+
+    with pytest.raises(
+        ValueError,
+        match="unexpected columns: customer_age",
+    ):
+        validate_customers(customers)
+
+
+def test_unexpected_order_column_is_rejected(orders):
+    orders["unexpected_field"] = ["A", "B"]
+
+    with pytest.raises(
+        ValueError,
+        match="unexpected columns: unexpected_field",
+    ):
+        validate_orders(
+            orders,
+            {"CUS001", "CUS002"},
+        )
