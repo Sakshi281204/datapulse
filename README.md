@@ -646,13 +646,26 @@ Some implementation choices were made to keep the project reproducible and trace
 
 - Rejected records are stored separately for investigation.
 
-- Pipeline metrics provide record-level reconciliation.
+- Pipeline metrics track received, newly inserted, and rejected records; publishing results separately report skipped duplicates.
 
 - SLA checks are separated from dashboard rendering to avoid unintended state changes when the dashboard is refreshed.
 
 
 
-## 14. Author
+## 14. Additional Documentation
+
+Detailed project documentation is available in the `docs/` directory:
+
+| Document | Description |
+|---|---|
+| [Data Dictionary](docs/data_dictionary.md) | Source datasets, target tables, field definitions, validation rules, and database structure. |
+| [Data Reconciliation](docs/RECONCILIATION.md) | Record accounting, duplicate handling, quarantine, and pipeline status interpretation. |
+| [Performance and Benchmark Evidence](docs/PERFORMANCE.md) | Synthetic data generation benchmark, methodology, results, and performance limitations. |
+| [AI Usage Disclosure](docs/AI_USAGE.md) | AI assistance disclosure, representative prompt topics, and human review and validation activities. |
+| [Design Notes](docs/DESIGN_NOTES.md) | Retry, restart, backfill and rerun behavior, the implemented optimization, trade-offs, and next steps. |
+| [Prompt History](docs/PROMPT_HISTORY.md) | How AI prompts were used per phase, what the AI produced, and what I reviewed and validated myself. |
+
+## 15. Author
 
 
 
