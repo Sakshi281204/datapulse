@@ -8,7 +8,7 @@
   alerts, pipeline orchestration, testing, dashboard, performance, final
   documentation).
 - I used the roadmap prompts as reference and wrote my own prompts in my own
-  words. My prompts are reproduced verbatim in section 7 of this file.
+  words. My development prompts were written in my own words following the phases below. The exact wording was not saved, so the table in section 2 is a reconstruction, not a verbatim log.
 - The table below is a **reconstruction of what I asked in each phase**, not a
   verbatim log.
 - During final submission preparation I also asked an AI assistant to review
@@ -62,6 +62,5 @@ memory, first write wins).
 
 ## 6. Limits of this record
 
-The verbatim export covers my development prompts. Later follow-up prompts
-(debugging, test fixes, final review) may be summarised rather than listed.
+The exact text of my prompts was not saved. This file describes them at the level of purpose, not wording.
 
