@@ -7,10 +7,9 @@
   validation and quarantine, transformation, SLA monitoring, freshness,
   alerts, pipeline orchestration, testing, dashboard, performance, final
   documentation).
-- I used those suggested prompts as **reference**. I did not paste them
-  unchanged. I described each task to the AI tool in my own words, so the
-  exact wording of my original prompts was **not preserved** and is not
-  reproduced here.
+- I used the roadmap prompts as reference and wrote my own prompts in my own
+  words. My prompts are reproduced verbatim in
+  `docs/prompt_exports/chatgpt_prompts.md`.
 - The table below is a **reconstruction of what I asked in each phase**, not a
   verbatim log.
 - During final submission preparation I also asked an AI assistant to review
@@ -64,5 +63,5 @@ memory, first write wins).
 
 ## 6. Limits of this record
 
-The exact text of my original prompts was not saved. This file describes them
-at the level of purpose, not wording.
+The verbatim export covers my development prompts. Later follow-up prompts
+(debugging, test fixes, final review) may be summarised rather than listed.
